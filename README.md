@@ -1,0 +1,1 @@
+This repository contains training data and logs from a humanoid robot simulated in MoJoCo, focusing on learning a stable standing posture. The training process optimizes the robot’s gait control system to maintain balance and remain stationary under simulation dynamics.

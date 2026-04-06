@@ -228,3 +228,106 @@ Where:
 
 Start high → reduce over time
 ε = 1 → 0.1 → 0.01
+
+# 📊 7. Action-Value Methods
+
+---
+
+## 🧠 What are Action-Value Methods?
+
+These methods estimate how good each action is and use those estimates to make decisions.
+
+---
+
+## 📈 Estimating Action Values
+
+We estimate value of an action using the average of rewards received:
+
+\[
+Q_t(a) = \frac{\sum \text{rewards when action a was taken}}{\text{number of times action a was taken}}
+\]
+
+---
+
+## 💡 Intuition
+
+> “If an action gave high rewards in the past, it is probably good.”
+
+---
+
+## 🔁 Sample Average Method
+
+Each action value is updated as an average of observed rewards.
+
+As more samples are collected:
+
+\[
+Q_t(a) \rightarrow q^*(a)
+\]
+
+---
+
+## 🟢 Greedy Action Selection
+
+Choose the action with the highest estimated value:
+
+\[
+A_t = argmax_a Q_t(a)
+\]
+
+---
+
+### ⚠️ Problem with Greedy
+
+- No exploration  
+- Can get stuck in suboptimal actions  
+
+---
+
+## 🎯 ε-Greedy Action Selection
+
+To fix greedy limitations:
+
+- With probability ε → choose random action  
+- With probability (1 - ε) → choose best action  
+
+---
+
+## ✅ Advantage
+
+- Ensures all actions are explored  
+- Improves long-term performance  
+
+---
+
+## 📈 Long-Term Behavior
+
+- Every action gets sampled  
+- Estimates become accurate  
+- Optimal action is chosen most of the time  
+
+---
+
+## 🧮 Example Calculation
+
+For:
+- 2 actions  
+- ε = 0.5  
+
+Probability of choosing greedy action:
+
+\[
+0.5 + (0.5 \times 0.5) = 0.75
+\]
+
+---
+
+## ⚠️ Note
+
+These guarantees are theoretical (asymptotic).  
+In practice, performance depends on:
+- ε value  
+- Number of steps  
+- Reward distribution  
+
+---

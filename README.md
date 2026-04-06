@@ -319,7 +319,116 @@ Probability of choosing greedy action:
 \[
 0.5 + (0.5 \times 0.5) = 0.75
 \]
+# 🧪 8. The 10-Armed Testbed
 
+---
+
+## 🎯 Purpose
+
+To compare the performance of:
+- Greedy methods
+- ε-greedy methods
+
+---
+
+## ⚙️ Setup
+
+- Number of actions: k = 10  
+- True action values:
+
+\[
+q^*(a) \sim \mathcal{N}(0, 1)
+\]
+
+- Rewards:
+
+\[
+R_t \sim \mathcal{N}(q^*(A_t), 1)
+\]
+
+---
+
+## 🧪 Experiment Details
+
+- 2000 independent bandit problems  
+- Each run = 1000 steps  
+- Results averaged  
+
+---
+
+## 📊 Methods Compared
+
+- Greedy (ε = 0)  
+- ε-greedy (ε = 0.01)  
+- ε-greedy (ε = 0.1)  
+
+---
+
+## 📈 Results
+
+---
+
+### 🟢 Greedy Method
+
+- Learns quickly at start  
+- Gets stuck in suboptimal actions  
+- Poor long-term performance  
+
+---
+
+### 🔵 ε = 0.1
+
+- Explores more  
+- Finds optimal action faster  
+- But keeps exploring → slightly suboptimal  
+
+---
+
+### 🟡 ε = 0.01
+
+- Slower learning  
+- Best long-term performance  
+
+---
+
+## 🧠 Key Insights
+
+- Exploration is essential  
+- Greedy methods fail due to lack of exploration  
+- Small ε gives best balance  
+
+---
+
+## 📊 Approximate Performance
+
+| Method | Avg Reward | Optimal Action % |
+|--------|-----------|-----------------|
+| Greedy | ~1.0 | ~33% |
+| ε = 0.1 | ~1.4 | ~91% |
+| ε = 0.01 | ~1.5 | ~95%+ |
+
+---
+
+## ⚠️ Effect of Noise
+
+- High noise → more exploration needed  
+- Low noise → greedy can work better  
+
+---
+
+## 🔁 Non-Stationary Problems
+
+In real-world RL:
+- Environments change over time  
+- Exploration is always necessary  
+
+---
+
+## 🧩 Conclusion
+
+> A balance between exploration and exploitation is essential for optimal learning.
+
+---
 ---
 
 ## ⚠️ Note

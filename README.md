@@ -438,5 +438,168 @@ In practice, performance depends on:
 - ε value  
 - Number of steps  
 - Reward distribution  
+# 🔁 10. Nonstationary Problems
+
+---
+
+## 🎯 Problem
+
+In real-world RL, environments change over time.
+
+---
+
+## ❌ Issue with Sample Average
+
+\[
+Q_n = \frac{1}{n} \sum R_i
+\]
+
+- Treats all rewards equally  
+- Slow to adapt to changes  
+
+---
+
+## 💡 Solution: Constant Step Size
+
+\[
+Q_{n+1} = Q_n + \alpha (R_n - Q_n)
+\]
+
+---
+
+## 🧠 Intuition
+
+> Recent rewards are more important than older ones
+
+---
+
+## 📉 Exponential Recency Weighting
+
+- Recent rewards → high weight  
+- Older rewards → exponentially less weight  
+
+---
+
+## ⚖️ Tradeoff
+
+| Method | Behavior |
+|--------|--------|
+| Sample Average | Stable, slow |
+| Constant α | Adaptive, responsive |
+
+---
+
+---
+
+# 🌟 11. Optimistic Initial Values
+
+---
+
+## 🎯 Idea
+
+Initialize action values optimistically:
+
+\[
+Q_1(a) = +5
+\]
+
+---
+
+## 🧠 Effect
+
+- Encourages exploration  
+- Agent becomes “disappointed” and tries other actions  
+
+---
+
+## ⚠️ Limitations
+
+- Works only at the beginning  
+- Not useful for nonstationary problems  
+
+---
+
+## 🧩 Insight
+
+> Initial beliefs can drive exploration
+
+---
+
+---
+
+# 🚀 12. Upper Confidence Bound (UCB)
+
+---
+
+## 🎯 Problem
+
+ε-greedy explores randomly and inefficiently.
+
+---
+
+## 💡 Solution: UCB
+
+\[
+A_t = argmax_a \left[ Q_t(a) + c \sqrt{\frac{\ln t}{N_t(a)}} \right]
+\]
+
+---
+
+## 🧠 Intuition
+
+Action score = value + uncertainty
+
+---
+
+## 📌 Behavior
+
+- Less tried actions → more exploration  
+- Frequently tried actions → less exploration  
+
+---
+
+## ✅ Advantages
+
+- Smart exploration  
+- Focuses on uncertain actions  
+
+---
+
+## ⚠️ Limitations
+
+- Hard to scale to large problems  
+- Not ideal for nonstationary environments  
+
+---
+
+---
+
+# 🧪 Key Insights
+
+---
+
+## 🔥 Exploration Strategies
+
+- ε-greedy → simple, random  
+- Optimistic values → initial exploration  
+- UCB → uncertainty-based exploration  
+
+---
+
+## 🧠 Real-World Insight
+
+> In dynamic environments, continuous exploration is necessary.
+
+---
+
+## 🚀 Summary
+
+Reinforcement Learning requires:
+
+- Learning from experience  
+- Adapting to change  
+- Balancing exploration and exploitation  
+
+---
 
 ---

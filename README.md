@@ -600,6 +600,92 @@ Reinforcement Learning requires:
 - Adapting to change  
 - Balancing exploration and exploitation  
 
+# 🤖 13. Agent–Environment Interface (MDP)
+
+---
+
+## 🎯 What is this?
+
+Reinforcement Learning is modeled as an interaction between:
+
+- **Agent** → the learner / decision maker  
+- **Environment** → everything the agent interacts with  
+
+---
+
+## 🔁 Interaction Loop
+
+At each time step \( t \):
+
+1. Agent observes **state** \( S_t \)  
+2. Agent takes **action** \( A_t \)  
+3. Environment returns:
+   - **reward** \( R_{t+1} \)  
+   - **next state** \( S_{t+1} \)  
+
+---
+
+## 🔄 Trajectory (Experience)
+
+The interaction generates a sequence:
+
+\[
+S_0, A_0, R_1, S_1, A_1, R_2, S_2, ...
+\]
+
+---
+
+## 📦 Components of MDP
+
+- **S (States):** possible situations  
+- **A (Actions):** choices available  
+- **R (Rewards):** feedback signal  
+
+---
+
+## 🧠 Dynamics Function
+
+\[
+p(s', r \mid s, a)
+\]
+
+👉 Meaning:
+
+- Probability of reaching state \( s' \)  
+- And receiving reward \( r \)  
+- Given current state \( s \) and action \( a \)
+
+---
+
+## ⚡ Markov Property (Very Important)
+
+> The future depends only on the present, not the past.
+
+---
+
+## 🧠 Why This Matters
+
+- Simplifies decision making  
+- Forms the mathematical foundation of RL  
+- Used in all major RL algorithms  
+
+---
+
+## 🤖 Example (Robot)
+
+- State → robot position  
+- Action → move forward  
+- Reward → +10 if goal reached  
+- Next state → updated position  
+
+---
+
+## 🧩 Summary
+
+> Reinforcement Learning is a continuous interaction where an agent learns from states, actions, and rewards to maximize long-term success.
+
+---
+
 ---
 
 ---
